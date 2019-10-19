@@ -17,7 +17,7 @@ public class EstadisticasImagen {
     public final int VERDE = 1;
     public final int ROJO = 2;
 
-    private final int[] Componentes = {ROJO, VERDE, AZUL};
+    private final int[] componentes = {ROJO, VERDE, AZUL};
 
     private int maximo[] = new int[3];
     private int minimo[] = new int[3];
@@ -49,7 +49,7 @@ public class EstadisticasImagen {
         // estadisticas 
         EstadisticasImagen res = new EstadisticasImagen();
 
-        for (int c : res.Componentes) {
+        for (int c : res.componentes) {
             // obtiene el máximo y mínimo del canal c de la subimagen
             Core.MinMaxLocResult minmax = minMaxLoc(bgr.get(c));
             // calcula el premodio del canal c de la subimagen

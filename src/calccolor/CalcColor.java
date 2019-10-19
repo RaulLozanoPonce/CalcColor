@@ -27,7 +27,7 @@ public class CalcColor extends javax.swing.JFrame {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
     }
     
-    private class ManejadorBarra implements AdjustmentListener{
+    private class BarHandler implements AdjustmentListener{
 
         @Override
         public void adjustmentValueChanged(AdjustmentEvent e) {
@@ -51,8 +51,8 @@ public class CalcColor extends javax.swing.JFrame {
         view = scrollPane.getViewport();
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.getHorizontalScrollBar().addAdjustmentListener(new ManejadorBarra());
-        scrollPane.getVerticalScrollBar().addAdjustmentListener(new ManejadorBarra());
+        scrollPane.getHorizontalScrollBar().addAdjustmentListener(new BarHandler());
+        scrollPane.getVerticalScrollBar().addAdjustmentListener(new BarHandler());
     }
     
     @SuppressWarnings("unchecked")
@@ -83,7 +83,7 @@ public class CalcColor extends javax.swing.JFrame {
         mibLabel = new javax.swing.JLabel();
         mebLabel = new javax.swing.JLabel();
         mabLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         loadImageItem = new javax.swing.JMenuItem();
@@ -255,9 +255,9 @@ public class CalcColor extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ESTADÍSTICAS SUBIMAGEN - CALCCOLOR");
+        titleLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("ESTADÍSTICAS SUBIMAGEN - CALCCOLOR");
 
         fileMenu.setText("Archivo");
 
@@ -307,14 +307,14 @@ public class CalcColor extends javax.swing.JFrame {
                         .addComponent(statisticsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE))
+                    .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(titleLabel)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -458,7 +458,6 @@ public class CalcColor extends javax.swing.JFrame {
     private javax.swing.JLabel greenLabel;
     private javax.swing.JMenu helpMenu;
     private calccolor.Board imageBoard;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem loadImageItem;
     private javax.swing.JLabel mabLabel;
     private javax.swing.JLabel magLabel;
@@ -482,5 +481,6 @@ public class CalcColor extends javax.swing.JFrame {
     private javax.swing.JLabel redLabel;
     private javax.swing.JScrollPane scrollPane;
     private javax.swing.JPanel statisticsPanel;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }
